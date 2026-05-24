@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ParkingETS</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+    <link rel="stylesheet" href="css/map.css" />
+</head>
+
+<body>
+
+    <div id="topbar">
+        <div id="logo">
+            <div id="logo-icon">P</div>
+            <div>
+                <div id="logo-text">ParkingETS</div>
+                <div id="logo-sub">Carte interactive des stationnements</div>
+            </div>
+        </div>
+        <div class="divider"></div>
+        <div class="control-group">
+            <span class="control-label">Date</span>
+            <input type="date" id="inp-date" class="control-input" />
+        </div>
+
+        <div class="control-group">
+            <span class="control-label">Heure</span>
+            <input type="time" id="inp-time" class="control-input" />
+        </div>
+
+        <button id="btn-filter">Filtrer</button>
+        <div class="divider"></div>
+
+        <div id="type-filters">
+            <div class="type-pill active" data-type="gratuit">Gratuit</div>
+            <div class="type-pill active" data-type="payant">Payant</div>
+            <div class="type-pill active" data-type="vignette">Vignette</div>
+            <div class="type-pill active" data-type="electrique">Electrique</div>
+            <div class="type-pill active" data-type="interdit">Interdit</div>
+        </div>
+
+        <button id="btn-admin" onclick="window.location.href='admin.html'">⚙ Admin</button>
+
+    </div>
+
+    <div id="main">
+        <div id="map"></div>
+
+        <div id="sidebar">
+            <div id="sidebar-header">
+                <h2 id="sidebar-title">Toutes les places</h2>
+                <p id="sidebar-sub">Chargement...</p>
+            </div>
+
+            <div id="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-label">Gratuites</div>
+                    <div class="stat-num" id="stat-gratuit">0</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Payantes</div>
+                    <div class="stat-num" id="stat-payant">0</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Vignettes</div>
+                    <div class="stat-num" id="stat-vignette">0</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Indisponibles</div>
+                    <div class="stat-num" id="stat-interdit">0</div>
+                </div>
+            </div>
+            <div id="spot-list"></div>
+
+        </div>
+    </div>
+    <div id="legend">
+        <div id="legend-title">Légende</div>
+        <div class="leg-row"><div class="leg-sq" style="background:#1D9E75;"></div>Gratuit</div>
+        <div class="leg-row"><div class="leg-sq" style="background:#BA7517;"></div>Payant</div>
+        <div class="leg-row"><div class="leg-sq" style="background:#534AB7;"></div>Vignette</div>
+        <div class="leg-row"><div class="leg-sq" style="background:#378ADD;"></div>Borne élec.</div>
+        <div class="leg-row"><div class="leg-sq" style="background:#E24B4A;"></div>Interdit</div>
+        <div class="leg-row"><div class="leg-sq" style="background:#D85A30;"></div>Travaux</div>
+      </div>
+      <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+      <script src="js/schedule.js"></script>
+  <script src="js/map.js"></script>
+</body>
+
+</html>
